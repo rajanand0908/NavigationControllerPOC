@@ -7,6 +7,12 @@
 
 import UIKit
 
+/// A Protocol that defines all the action of landing view
+///
+protocol LandingViewActionProtocol: AnyObject {
+  func nextButtonClicked(_ sender: Any)
+}
+
 final class LandingView: UIView {
   
   // MARK: - Properties
@@ -18,12 +24,14 @@ final class LandingView: UIView {
     return button
   }()
   
+  weak var delegate: LandingViewActionProtocol?
   
   // MARK: - Life Cycle
   
-  override init(frame: CGRect) {
+  init(frame: CGRect, delegate: LandingViewActionProtocol?) {
+    self.delegate = delegate
     super.init(frame: frame)
-    configureView()
+    setupUI()
   }
   
   @available(*, unavailable)
@@ -38,9 +46,10 @@ final class LandingView: UIView {
 private typealias SetupHelper = LandingView
 private extension SetupHelper {
   
-  private func configureView() {
+  private func setupUI() {
     backgroundColor = .white
     
+    nextButton.addTarget(self, action: #selector(nextButtonClicked(_:)), for: .touchUpInside)
     addSubviewsForAutoLayout(nextButton)
     
     NSLayoutConstraint.activate([
@@ -51,4 +60,9 @@ private extension SetupHelper {
     ])
     
   }
+  
+  @objc func nextButtonClicked(_ sender: Any) {
+    delegate?.nextButtonClicked(sender)
+  }
+  
 }

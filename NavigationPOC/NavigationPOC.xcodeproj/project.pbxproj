@@ -16,6 +16,8 @@
 		BEFC034B28F475F30084497E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFC034A28F475F30084497E /* ViewController.swift */; };
 		BEFC034D28F4761A0084497E /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFC034C28F4761A0084497E /* CustomViewController.swift */; };
 		BEFC034F28F4764A0084497E /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFC034E28F4764A0084497E /* LandingViewController.swift */; };
+		BEFC035328F478DD0084497E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFC035228F478DD0084497E /* DetailView.swift */; };
+		BEFC035528F479020084497E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFC035428F479020084497E /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		BEFC034A28F475F30084497E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BEFC034C28F4761A0084497E /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		BEFC034E28F4764A0084497E /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		BEFC035228F478DD0084497E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		BEFC035428F479020084497E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 			children = (
 				BEFC034028F475240084497E /* Common */,
 				BEFC033F28F475140084497E /* Landing */,
+				BEFC035028F4789B0084497E /* DetailView */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -154,6 +159,23 @@
 				BEFC034C28F4761A0084497E /* CustomViewController.swift */,
 			);
 			path = CustomViewController;
+			sourceTree = "<group>";
+		};
+		BEFC035028F4789B0084497E /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				BEFC035128F478CE0084497E /* View */,
+				BEFC035428F479020084497E /* DetailViewController.swift */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		BEFC035128F478CE0084497E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BEFC035228F478DD0084497E /* DetailView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,7 +248,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEFC035528F479020084497E /* DetailViewController.swift in Sources */,
 				BEFC034B28F475F30084497E /* ViewController.swift in Sources */,
+				BEFC035328F478DD0084497E /* DetailView.swift in Sources */,
 				BEFC034F28F4764A0084497E /* LandingViewController.swift in Sources */,
 				BEFC034828F475B70084497E /* LandingView.swift in Sources */,
 				BEFC034528F4758C0084497E /* UIView+Extension.swift in Sources */,
