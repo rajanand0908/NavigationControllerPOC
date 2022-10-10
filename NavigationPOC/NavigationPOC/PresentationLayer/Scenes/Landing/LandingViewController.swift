@@ -13,7 +13,11 @@ final class LandingViewController: CustomViewController<LandingView> {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    configure()
+    setup()
+  }
+  
+  override func buildView(frame: CGRect) -> LandingView {
+    return LandingView(frame: frame, delegate: self)
   }
   
 }
@@ -21,10 +25,29 @@ final class LandingViewController: CustomViewController<LandingView> {
 // MARK: - Setup Helper
 
 private typealias SetupHelper = LandingViewController
-private extension SetupHelper {
+extension SetupHelper {
   
-  private func configure() {
-    view.backgroundColor = .white
+  func setup() {
+    setupNavigationBar()
+  }
+  
+  func setupNavigationBar() {
+    navigationController?.navigationBar.prefersLargeTitles = true
+    navigationController?.navigationBar.backgroundColor = .purple
+    navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+    navigationController?.navigationBar.tintColor = .white
+    navigationItem.title = "Landing Screen"
+  }
+  
+}
+
+// MARK: - Landing View Action Helper
+
+private typealias LandingViewActionHelper = LandingViewController
+extension LandingViewActionHelper: LandingViewActionProtocol {
+  
+  func nextButtonClicked(_ sender: Any) {
+    navigationController?.pushViewController(DetailViewController(), animated: true)
   }
   
 }
